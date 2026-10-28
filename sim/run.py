@@ -1,6 +1,6 @@
 """Mona Kart desktop runner.
 
-    python3 -I mona_kart/sim/run.py --app mona_kart/app --frames 1800 --dt 33 \
+    python3 -I sim/run.py --app app --frames 1800 --dt 33 \
         --input "30:SELECT 60:RIGHT 90:SELECT 120-900:LEFT 400:SELECT" \
         --shots 1,40,100,200,400 --sheet out/sheet.png --autopilot
 
@@ -220,7 +220,7 @@ def _stat(values):
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Run a badge app in the desktop simulator.")
     ap.add_argument("--app", default=os.path.join(os.path.dirname(HERE), "app"),
-                    help="app folder containing __init__.py (default: mona_kart/app)")
+                    help="app folder containing __init__.py (default: app)")
     ap.add_argument("--frames", type=int, default=600)
     ap.add_argument("--dt", type=int, default=33, help="ms per frame")
     ap.add_argument("--input", default="", help='e.g. "30:SELECT 120-900:LEFT"')
@@ -228,7 +228,7 @@ def main(argv=None):
     ap.add_argument("--every", type=int, default=0, help="also save every Nth frame")
     ap.add_argument("--out", default=os.path.join(HERE, "out"), help="screenshot folder")
     ap.add_argument("--sheet", default="",
-                    help="contact sheet path (relative paths resolve against mona_kart/sim/)")
+                    help="contact sheet path (relative paths resolve against sim/)")
     ap.add_argument("--cols", type=int, default=3, help="contact sheet columns")
     ap.add_argument("--scale", type=int, default=1, help="integer upscale for saved PNGs")
     ap.add_argument("--autopilot", action="store_true", help="steer the player during races")

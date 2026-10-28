@@ -8,7 +8,7 @@ VOLUME="${1:-/Volumes/BADGER}"
 MENU="$VOLUME/apps/menu"
 HERE="$(cd "$(dirname "$0")" && pwd)"
 WORK="${TMPDIR:-/tmp}/mona_kart_icon"
-BACKUP="$HERE/../../badge/menu-backup"
+BACKUP="$HERE/../badge/menu-backup"
 
 [ -f "$MENU/src/icons.py" ] || { echo "Menu not found at $MENU (open Mass Storage first)" >&2; exit 1; }
 mkdir -p "$WORK" "$BACKUP"

@@ -4,8 +4,8 @@ Mona Kart is an original pseudo-3D kart racer for the GitHub Universe 2026 badge
 (MonaOS 4.0, MicroPython, 320x240 screen). One track, 3 laps, 4 racers (you + 3 AI),
 5 playable characters: LLMs, coding harnesses and Mona the Octocat.
 
-The app folder `mona_kart/app/` is copied as-is to the badge at
-`/system/apps/mona_kart/`. `mona_kart/sim/` is a desktop simulator that is never
+The app folder `app/` is copied as-is to the badge at
+`/system/apps/mona_kart/`. `sim/` is a desktop simulator that is never
 copied to the badge.
 
 ## Platform rules (MicroPython on the badge)

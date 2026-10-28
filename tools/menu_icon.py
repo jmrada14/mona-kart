@@ -8,7 +8,7 @@ frame. Contours are flat (x, y, x, y, ...) tuples in a unit box centred on 0
 with y pointing down, filled NON_ZERO, so holes wind the other way.
 
 Usage (desktop CPython):
-  python3 -I mona_kart/tools/menu_icon.py --icons-src icons.py --icons-out icons_new.py \
+  python3 -I tools/menu_icon.py --icons-src icons.py --icons-out icons_new.py \
       --anim-out mona_kart.bin --preview preview.png
 """
 

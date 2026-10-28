@@ -1,6 +1,6 @@
 # Mona Kart desktop simulator
 
-Runs `mona_kart/app/` under desktop CPython (3.10+, standard library only) with
+Runs `app/` under desktop CPython (3.10+, standard library only) with
 fake MonaOS firmware, then saves PNG screenshots. Nothing here is copied to the badge.
 
 All commands run from the repo root. `-I` keeps your environment out of the run.
@@ -8,13 +8,13 @@ All commands run from the repo root. `-I` keeps your environment out of the run.
 ## Run the game
 
 ```sh
-python3 -I mona_kart/sim/run.py --app mona_kart/app --frames 1800 --dt 33 \
+python3 -I sim/run.py --app app --frames 1800 --dt 33 \
     --input "30:SELECT 60:RIGHT 90:SELECT" \
     --shots 1,40,100,200,400,1200 --sheet out/sheet.png --autopilot --fresh-state
 ```
 
-Output goes to `mona_kart/sim/out/` (gitignored): `frame_NNNN.png` per shot and
-the contact sheet. A relative `--sheet` path is resolved against `mona_kart/sim/`.
+Output goes to `sim/out/` (gitignored): `frame_NNNN.png` per shot and
+the contact sheet. A relative `--sheet` path is resolved against `sim/`.
 Old `frame_*.png` files are deleted at the start of each run.
 
 The runner prints Python ms per frame (avg/p95/max), primitive counts per frame
@@ -59,8 +59,8 @@ nothing in menus, so use `--input` to get through TITLE and SELECT.
 ### Versus (two badges)
 
 ```sh
-python3 -I mona_kart/sim/versus.py                 # full 1v1 race, about a minute
-python3 -I mona_kart/sim/versus.py --drop-at 1200  # badge B walks away mid-race
+python3 -I sim/versus.py                 # full 1v1 race, about a minute
+python3 -I sim/versus.py --drop-at 1200  # badge B walks away mid-race
 ```
 
 Starts two `run.py` processes (badge A "Ada", central, and badge B "Bo", booted
@@ -83,7 +83,7 @@ Runner flags used for this: `--realtime --pace P --epoch T` (wall-clock pacing),
 ## Check MicroPython compatibility
 
 ```sh
-python3 -I mona_kart/sim/mpy_check.py            # defaults to mona_kart/app
+python3 -I sim/mpy_check.py            # defaults to app
 ```
 
 Flags walrus, `match`, `__slots__`, f-string `{x=}`, keyword-only and
@@ -120,7 +120,7 @@ ends up in `app/`.
 - `run(update)` stores the callable. `reset()` raises `AppExit`, a BaseException,
   so an app's `except Exception` won't swallow it. The runner then stops cleanly
   and calls `on_exit()` if the app defines one.
-- `State.load/save/delete` read and write `mona_kart/sim/out/state/<key>.json`.
+- `State.load/save/delete` read and write `sim/out/state/<key>.json`.
   JSON turns tuples into lists.
 - `image`, `shape`, and `mat3` are inert stubs (`image.OFF` and similar work).
 - `gc.mem_free` and `time.ticks_ms` exist so stray MicroPython calls don't crash.

@@ -69,11 +69,11 @@ in `app/kart_racers.py`.
 ## Desktop simulator
 
 ```sh
-python3 -I mona_kart/sim/run.py --app mona_kart/app --frames 3600 \
+python3 -I sim/run.py --app app --frames 3600 \
   --input "40:SELECT 70:SELECT" --shots 20,150,700,2200 \
   --sheet out/sheet.png --autopilot --fresh-state
-python3 -I mona_kart/sim/versus.py   # two simulated badges race each other
-python3 -I mona_kart/sim/mpy_check.py
+python3 -I sim/versus.py   # two simulated badges race each other
+python3 -I sim/mpy_check.py
 ```
 
 ## Performance

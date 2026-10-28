@@ -4,7 +4,7 @@
 into `builtins`, registers fake `badgeware` and `micropython` modules and adds
 the app directory to sys.path. Pure standard library; no Pillow.
 
-The rasteriser implements exactly the drawing subset in mona_kart/CONTRACT.md:
+The rasteriser implements exactly the drawing subset in CONTRACT.md:
 clear, rectangle, triangle, circle, line, text, measure_text. Pixel centres are
 sampled at (x + 0.5, y + 0.5), so shapes sharing an edge tile without gaps or
 double-blending.

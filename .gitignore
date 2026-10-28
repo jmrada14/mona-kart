@@ -1,5 +1,5 @@
 __pycache__/
 *.pyc
 .ruff_cache/
-mona_kart/sim/out/
+sim/out/
 badge/

@@ -1,6 +1,6 @@
-"""Static check of mona_kart/app/*.py for constructs that break on MicroPython.
+"""Static check of app/*.py for constructs that break on MicroPython.
 
-    python3 -I mona_kart/sim/mpy_check.py [app_dir]
+    python3 -I sim/mpy_check.py [app_dir]
 
 Exits 1 if anything is found.
 """

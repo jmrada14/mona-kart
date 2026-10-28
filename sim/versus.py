@@ -1,14 +1,14 @@
 """Two-badge versus run: launches two simulator processes linked over localhost UDP.
 
-    python3 -I mona_kart/sim/versus.py                     # full race, ~1 min
-    python3 -I mona_kart/sim/versus.py --drop-at 1200      # badge B walks away mid-race
+    python3 -I sim/versus.py                     # full race, ~1 min
+    python3 -I sim/versus.py --drop-at 1200      # badge B walks away mid-race
 
 Both badges pick VERSUS on the title, pair (fake proximity sync), pick different
 drivers and race with --autopilot. Frames are paced in wall-clock time from a
 shared epoch (run.py --realtime) so both badge clocks advance together; B boots
 with a different badge.ticks to exercise the clock sync. Afterwards a contact
 sheet of matching moments from both badges is written to
-mona_kart/sim/out/versus_sheet.png (left column badge A, right column B), and
+sim/out/versus_sheet.png (left column badge A, right column B), and
 the two outcomes are checked against each other (exit 1 if they disagree).
 """
 
